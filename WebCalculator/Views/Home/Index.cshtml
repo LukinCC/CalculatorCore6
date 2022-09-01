@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@model WebCalculator.Models.CalculatorModel
+
+
+<body>
+    <div class="calculatorWithHistory">
+        <div class="calculator">
+            <h2>Kalkulačka</h2>
+
+            @Html.TextBoxFor(model => model.Expression, new { @readonly = "readonly" })<br />
+
+            <label><input id="IntegerValues" type="checkbox" name="IntegerValues" value="IntegerValues"> Celočíselne hodnoty</label><br />
+
+            <table>
+                <tr>
+                    <td>
+                        <input type="button" value="1" onclick="setExpression('1')" />
+                    </td>
+                    <td>
+                        <input type="button" value="2" onclick="setExpression('2')" />
+                    </td>
+                    <td>
+                        <input type="button" value="3" onclick="setExpression('3')" />
+                    </td>
+                    <td>
+                        <input type="button" value="+" style="background-color: blue; color:white" onclick="setExpression('+')" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="button" value="4" onclick="setExpression('4')" />
+                    </td>
+                    <td>
+                        <input type="button" value="5" onclick="setExpression('5')" />
+                    </td>
+                    <td>
+                        <input type="button" value="6" onclick="setExpression('6')" />
+                    </td>
+
+                    <td>
+                        <input type="button" value="-" style="background-color: blue; color:white" onclick="setExpression('-')" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="button" value="7" onclick="setExpression('7')" />
+                    </td>
+                    <td>
+                        <input type="button" value="8" onclick="setExpression('8')" />
+                    </td>
+                    <td>
+                        <input type="button" value="9" onclick="setExpression('9')" />
+                    </td>
+
+                    <td>
+                        <input type="button" value="*" style="background-color: blue; color:white" onclick="setExpression('*')" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="button" value="0" onclick="setExpression('0')" />
+                    </td>
+
+                    <td>
+                        <input type="button" value="." onclick="setExpression('.')" />
+                    </td>
+                    <td>
+                        <input type="button" value="C" style="background-color: lightblue"  onclick="clearExpression()" />
+                    </td>
+
+                    <td>
+                        <input type="button" value="/" style="background-color: blue; color:white" onclick="setExpression('/')" />
+                    </td>
+                </tr>
+            </table>
+
+            <input id="Calculator" type="button" value="Calculate" style="background-color: red;" onclick="calculate()" />
+        </div>
+
+        <div class="calculatorHistory">
+            <h2>History:</h2>
+            <div class="history"></div>
+
+            <table id="calculatorHistoryTable">
+                <tbody>
+
+                    @foreach (var history in Model.History)
+                    {
+                        <tr><td> @history </td></tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
