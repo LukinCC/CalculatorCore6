@@ -2,6 +2,9 @@
 
 namespace Calculator
 {
+    /// <summary>
+    /// String calculator interface
+    /// </summary>
     public interface IStringCalculator
     {
         /// <summary>
