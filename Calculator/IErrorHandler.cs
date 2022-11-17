@@ -2,6 +2,9 @@
 
 namespace Calculator
 {
+    /// <summary>
+    /// Interface error handler
+    /// </summary>
     public interface IErrorHandler
     {
         /// <summary>
