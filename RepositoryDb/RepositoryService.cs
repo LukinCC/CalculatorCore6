@@ -4,6 +4,9 @@ using RepositoryDb.Models;
 
 namespace RepositoryDb
 {
+    /// <summary>
+    /// Repository service
+    /// </summary>
     public class RepositoryService : IRepositoryService
     {
         MyDbContext _myContext;
