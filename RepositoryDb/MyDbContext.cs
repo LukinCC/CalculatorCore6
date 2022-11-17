@@ -5,10 +5,11 @@ using RepositoryDb.Models;
 namespace RepositoryDb
 {
     /// <summary>
-    /// Db context
+    /// My Db context
     /// </summary>
     public class MyDbContext : DbContext
     {
+
         public MyDbContext(DbContextOptions<MyDbContext> options)
         : base(options)
         {
